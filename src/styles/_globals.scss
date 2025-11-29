@@ -1,0 +1,44 @@
+// Color Brand
+$color-brand-orange: #ff8750;
+$color-brand-purple: #622760;
+$white: #ffffff;
+
+// Color brand Basic
+$color-basic-000-white-high-alpha: $white;
+$color-basic-white-medium-alpha: rgba(129, 119, 129, 0.5);
+$color-basic-000: $white;
+$color-basic-050: #f8f7f8;
+$color-basic-100: #e0d9e0;
+$color-basic-200: #d1c7d1;
+$color-basic-300: #bfb0be;
+$color-basic-400: #a0989f;
+$color-basic-500: #817781;
+$color-basic-600: #635a63;
+$color-basic-700: #494149;
+$color-basic-800: #342e34;
+$color-basic-900: #2d242d;
+
+// Color brand primary
+$color-primary-low-alpha: rgba(98, 47, 96, 0.32);
+$color-primary-050: #f5eaf5;
+$color-primary-100: #e0c8df;
+$color-primary-200: #d9bad8;
+$color-primary-300: #c69ac4;
+$color-primary-400: #b677b3;
+$color-primary-500: #ac53a9;
+$color-primary-600: #864084;
+$color-primary-700: $color-brand-purple;
+$color-primary-800: #471f45;
+$color-primary-900: #2b132a;
+
+// Color brand secondary
+$color-secondary-050: #fbf6f4;
+$color-secondary-100: #f4e8e1;
+$color-secondary-200: #ffe1d1;
+$color-secondary-300: #ffbc99;
+$color-secondary-400: $color-brand-orange;
+$color-secondary-500: #d67843;
+$color-secondary-600: #b85c28;
+$color-secondary-700: #8a451e;
+$color-secondary-800: #4e250e;
+$color-secondary-900: #31190c;
