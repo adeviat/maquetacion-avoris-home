@@ -1,0 +1,222 @@
+@use 'semantic' as s;
+@use 'globals' as g;
+
+// Navbar
+$navbar-bg-default: s.$bg-white-default;
+$navbar-menu-icon-default: s.$fr-primary-dark-default;
+$navbar-menu-icon-hover: s.$fr-primary-dark-hover;
+$navbar-border-default: s.$bd-secondary-medium-default;
+
+// Hero
+$hero-title-default: s.$fr-on-dark-default;
+$hero-subtitle-default: s.$fr-on-dark-default;
+
+// Tab / Navbar
+$tab-selection-indicator-bg-active: s.$bg-secondary-medium-default;
+$tab-selection-indicator-bg-active-hover: s.$bg-secondary-medium-hover;
+$tab-text-default: s.$fr-on-white-default;
+$tab-text-hover: s.$fr-on-white-hover;
+$tab-text-selected: s.$fr-on-white-default;
+$tab-fr-selected-hover: s.$fr-on-white-hover;
+$tab-icon-default: s.$ic-black-default;
+$tab-icon-hover: s.$ic-black-hover;
+$tab-icon-selected: s.$ic-black-default;
+$tab-icon-selected-hover: s.$ic-black-hover;
+
+// buttons
+$btn-primary-text-default: s.$fr-on-primary-dark-default;
+$btn-primary-bg-default: s.$bg-primary-dark-default;
+$btn-primary-border-default: s.$bd-primary-dark-default;
+$btn-primary-text-hover: s.$fr-on-primary-dark-hover;
+$btn-primary-bg-hover: s.$bg-primary-dark-hover;
+$btn-primary-border-hover: s.$bd-primary-dark-hover;
+$btn-primary-text-disabled: s.$fr-on-primary-dark-disabled;
+$btn-primary-bg-disabled: s.$bg-primary-dark-disabled;
+$btn-primary-border-disabled: s.$bd-primary-dark-disabled;
+$btn-accent-text-default: s.$fr-on-secondary-medium-default;
+$btn-accent-bg-default: s.$bd-secondary-medium-default;
+$btn-accent-border-default: s.$bd-secondary-medium-default;
+$btn-accent-text-hover: s.$fr-on-secondary-medium-hover;
+$btn-accent-bg-hover: s.$bg-secondary-medium-hover;
+$btn-accent-border-hover: s.$bd-secondary-medium-hover;
+$btn-accent-text-disabled: s.$fr-on-secondary-medium-disabled;
+$btn-accent-bg-disabled: s.$bg-secondary-medium-disabled;
+$btn-accent-border-disabled: g.$color-basic-000;
+$btn-secondary-text-default: s.$fr-primary-dark-default;
+$btn-secondary-bg-default: s.$bg-white-default;
+$btn-secondary-border-default: s.$bd-primary-dark-default;
+$btn-secondary-text-hover: s.$fr-primary-dark-hover;
+$btn-secondary-bg-hover: s.$bg-white-hover;
+$btn-secondary-border-hover: s.$bd-primary-dark-hover;
+$btn-secondary-foreground-disabled: s.$fr-on-primary-dark-disabled;
+$btn-secondary-bg-disabled: s.$bg-primary-light-default;
+$btn-secondary-border-disabled: s.$bd-primary-dark-disabled;
+$btn-slider-icon-default: g.$color-basic-000;
+$btn-slider-icon-hover: g.$color-basic-000;
+$btn-slider-bg-default: g.$color-basic-000;
+$btn-slider-bg-hover: g.$color-basic-000;
+
+//Button slider nav
+$btn-nav-bg-default: g.$color-primary-low-alpha;
+$btn-nav-bg-hover: g.$color-primary-700;
+$btn-nav-icon-default: s.$ic-white-default;
+$btn-nav-icon-hover: s.$ic-white-hover;
+
+// Button show-filter
+$btn-filter-text-default: s.$fr-on-light-default;
+$btn-filter-text-hover: s.$fr-on-light-hover;
+$btn-filter-icon-default: s.$ic-black-default;
+$btn-filter-icon-hover: s.$ic-black-hover;
+$btn-filter-bg-default: s.$bg-secondary-light-default;
+$btn-filter-bg-hover: s.$bg-secondary-light-hover;
+$btn-filter-border-default: s.$bd-medium-default;
+$btn-filter-border-hover: s.$bd-medium-hover;
+
+
+// tags
+$tag-primary-bg: s.$bg-secondary-medium-default;
+$tag-primary-text: s.$fr-black-default;
+$tag-secondary-bg: s.$bg-medium-light-default;
+$tag-secondary-text: s.$fr-black-default;
+
+// Indicator slider
+$indicator-bg-selected-default: s.$bg-secondary-medium-default;
+$indicator-bg-selected-hover: s.$bg-secondary-medium-hover;
+$indicator-border-selected-default: s.$bd-white-default;
+$indicator-border-selected-hover: s.$bd-light-hover;
+$indicator-bg-default: s.$bg-white-high-alfa;
+$indicator-bg-hover: s.$bg-white-hover;
+$indicator-border-default: s.$bd-white-default;
+$indicator-border-hover: s.$bd-light-hover;
+
+// form text input
+$input-bg-default: s.$bg-white-default;
+$input-bg-hover: s.$bg-white-default;
+$input-bg-focus: s.$bg-white-default;
+$input-bg-focus-hover: s.$bg-white-default;
+$input-bg-disabled: s.$bg-input-disabled;
+$input-border-default: s.$bd-primary-dark-default;
+$input-border-hover: s.$bd-primary-dark-hover;
+$input-border-focus: s.$bd-primary-dark-default;
+$input-border-focus-hover: s.$bd-primary-dark-hover;
+$input-border-disabled: s.$bd-input-disabled;
+$input-label-default: s.$fr-secondary-dark-default;
+$input-label-hover: s.$fr-secondary-dark-hover;
+$input-label-focus: s.$fr-secondary-dark-default;
+$input-label-focus-hover: s.$fr-secondary-dark-hover;
+$input-label-disabled: s.$fr-input-light-disabled;
+$input-placeholder-default: s.$fr-medium-light-default;
+$input-placeholder-hover: s.$fr-medium-light-hover;
+$input-placeholder-focus: s.$bd-input-disabled;
+$input-placeholder-focus-hover: s.$bd-input-disabled;
+$input-text-default: s.$fr-text-on-light-default;
+$input-text-hover: s.$fr-text-on-light-hover;
+$input-text-focus: s.$fr-text-on-light-default;
+$input-text-focus-hover: s.$fr-text-on-light-hover;
+$input-icon-default: s.$ic-primary-dark-default;
+$input-icon-hover: s.$ic-primary-dark-hover;
+$input-icon-focus: s.$ic-primary-dark-default;
+$input-icon-focus-hover: s.$ic-primary-dark-hover;
+$input-icon-disabled: s.$ic-disabled;
+$input-chevron-default: s.$ic-primary-dark-default;
+$input-chevron-hover: s.$ic-primary-dark-hover;
+$input-chevron-focus: s.$ic-primary-dark-default;
+$input-chevron-focus-hover: s.$ic-primary-dark-hover;
+$input-chevron-disabled: s.$ic-disabled;
+$input-text-disabled: s.$fr-text-dark-disabled;
+
+// Form checkbox
+$checkbox-bg-default: s.$bg-white-default;
+$checkbox-bg-hover: s.$bg-white-default;
+$checkbox-bg-selected: s.$bg-secondary-medium-default;
+$checkbox-bg-selected-hover: s.$bg-secondary-medium-hover;
+$checkbox-check-icon-default: s.$ic-primary-dark-default;
+$checkbox-check-icon-hover: s.$ic-primary-dark-hover;
+$checkbox-box-border-default: s.$bd-primary-dark-default;
+$checkbox-box-border-hover: s.$bd-primary-dark-hover;
+$checkbox-box-border-selected: s.$bd-primary-dark-default;
+$checkbox-box-border-selected-hover: s.$bd-primary-dark-hover;
+$chackbox-text-default: s.$fr-on-white-default;
+$chackbox-text-hover: s.$fr-on-white-hover;
+$chackbox-text-selected: s.$fr-on-white-default;
+$chackbox-text-selected-hover: s.$fr-on-white-hover;
+
+// Cards
+$card-bg-default: s.$bg-white-default;
+$card-bg-hover: s.$bg-white-default;
+$card-title-default: s.$fr-title-default;
+$card-title-hover: s.$fr-title-default;
+$card-text-default: s.$fr-text-on-light-default;
+$card-text-hover: s.$fr-text-on-light-hover;
+$card-top-price-text: s.$fr-on-light-default;
+$card-price: s.$fr-on-light-default;
+$card-breakdown-foreground-default: s.$fr-primary-dark-default;
+$card-breakdown-foreground-hover: s.$fr-primary-dark-hover;
+$card-breakdown-chevron-default: s.$ic-primary-dark-default;
+$card-breakdown-chevron-hover: s.$ic-primary-dark-hover;
+
+// Circuit card
+$circuit-bottom-bar-bg-default: s.$bg-secondary-light-default;
+$circuit-bottom-bar-bg-hover: s.$bg-secondary-light-default;
+
+// Filters
+$filter-section-title-default: s.$fr-on-light-default;
+$filter-name-text-default: s.$fr-on-light-default;
+$filter-name-text-hover: s.$fr-on-light-default;
+$filter-name-text-open: s.$fr-secondary-dark-default;
+$filter-name-text-open-hover: s.$fr-secondary-dark-hover;
+$filter-icon-default: s.$fr-on-light-default;
+$filter-icon-hover: s.$fr-on-light-default;
+$filter-icon-open: s.$fr-secondary-dark-default;
+$filter-icon-open-hover: s.$fr-on-light-default;
+$filter-chevron-default: s.$fr-on-light-default;
+$filter-chevron-hover: s.$fr-on-light-hover;
+$filter-chevron-open: s.$ic-secondary-dark-default;
+$filter-chevron-open-hover: s.$fr-on-light-default;
+$filter-link-default: s.$fr-link-default;
+$filter-link-hover: s.$fr-link-hover;
+$filter-divisor: s.$dv-light;
+
+// Search bar
+$search-bg-default: s.$bg-secondary-medium-light-default;
+$search-title-default: s.$fr-primary-dark-default;
+$search-summary-bg-default: s.$bg-secondary-light-default;
+$search-summary-border-default: s.$bd-medium-default;
+$search-text-default: s.$fr-text-on-light-default;
+
+// Overlay
+$overlay-close-icon-default: s.$ic-black-default;
+$overlay-close-icon-hover: s.$ic-black-hover;
+$overlay-bg-default: s.$bg-white-default;
+$overlay-border-default: s.$bd-medium-default;
+$overlay-top-bar-default: s.$bg-secondary-light-default;
+$overlay-bottom-bar-default: $overlay-top-bar-default;
+$overlay-bar-text-default: s.$fr-on-light-default;
+$overlay-bar-text-hover: s.$fr-text-on-light-hover;
+$overlay-title-default: s.$fr-title-default;
+$overlay-text-default: s.$fr-text-on-light-default;
+$overlay-price-default: s.$fr-text-on-light-default;
+$overlay-link-default: s.$fr-link-default;
+$overlay-link-hover: s.$fr-link-hover;
+$overlay-alfa-bg-default: s.$bg-basic-medium-alpha;
+
+// Overlay modal
+$modal-price-box-border-default: s.$bd-primary-dark-default;
+$modal-price-box-bg-default: s.$bg-secondary-light-default;
+
+// Contact 
+$contact-title-default: s.$fr-primary-dark-default;
+$contact-text-default: g.$color-primary-800;
+$contact-link-default: s.$fr-link-default;
+$contact-link-hover: s.$fr-link-hover;
+$contact-social-media-icon-default: s.$ic-primary-light-default;
+$contact-social-media-icon-hover: s.$ic-primary-light-hover;
+$contact-social-media-bg-default: s.$bg-primary-dark-default;
+$contact-social-media-bg-hover: s.$bg-primary-dark-hover;
+
+// Footer
+$footer-bg-default: s.$bg-secondary-light-default;
+$footer-list-item-text-default: s.$fr-on-light-default;
+$footer-list-item-text-hover: s.$fr-on-light-hover;
+$footer-bg-bottom-bar-deafult: s.$bg-medium-light-default;
+$footer-fr-bottom-bar-default: s.$fr-primary-dark-default;
