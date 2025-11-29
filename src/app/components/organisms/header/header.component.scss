@@ -1,0 +1,96 @@
+@use '../../../../styles/components' as c;
+@use '../../../../styles/mixins' as m;
+
+.o-header {
+  background-color: c.$navbar-bg-default;
+  color: c.$hero-title-default;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: m.$space-md m.$space-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: m.$space-md;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo {
+    height: 28px;
+  }
+
+  /* Hamburguesa: visible en mobile / tablet small */
+  &__menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__menu-line {
+    height: 2px;
+    border-radius: 1px;
+    background-color: c.$navbar-menu-icon-default;
+  }
+
+  /* Navegación y CTA ocultas en mobile */
+  &__nav {
+    display: none;
+  }
+
+  &__cta {
+    display: none;
+  }
+
+  /* Tablet large y Desktop */
+  @include m.respond-up(tablet-lg) {
+    &__menu-toggle {
+      display: none;
+    }
+
+    &__nav {
+      display: block;
+      margin-left: m.$space-xl;
+      flex: 1;
+    }
+
+    &__nav-list {
+      display: flex;
+      align-items: center;
+      gap: m.$space-xl;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: m.$space-xs;
+      font-weight: 500;
+      color: c.$filter-link-default;
+      text-decoration: none;
+    }
+
+    &__nav-item--active &__nav-link {
+      color: c.$filter-link-default;
+    }
+
+    &__cta {
+      display: inline-flex;
+      margin-left: m.$space-xl;
+    }
+  }
+}

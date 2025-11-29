@@ -1,1 +1,41 @@
-<p>header works!</p>
+<header class="o-header">
+  <div class="o-header__inner">
+    <a class="o-header__brand" href="#">
+      <img
+        src="https://picsum.photos/800/600?random=1"
+        alt="Waveless"
+        class="o-header__logo"
+      />
+    </a>
+
+    <button class="o-header__menu-toggle" aria-label="Abrir menú">
+      <span class="o-header__menu-line"></span>
+      <span class="o-header__menu-line"></span>
+      <span class="o-header__menu-line"></span>
+    </button>
+
+    <nav class="o-header__nav" aria-label="Navegación principal">
+      <ul class="o-header__nav-list">
+        <li class="o-header__nav-item o-header__nav-item--active">
+          <a href="#" class="o-header__nav-link">
+            <span class="o-header__nav-icon">▲</span>
+            <span>Aventura</span>
+          </a>
+        </li>
+        <li class="o-header__nav-item">
+          <a href="#" class="o-header__nav-link">Destinos</a>
+        </li>
+        <li class="o-header__nav-item">
+          <a href="#" class="o-header__nav-link">Alojamiento</a>
+        </li>
+        <li class="o-header__nav-item">
+          <a href="#" class="o-header__nav-link">Sobre nosotros</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="a-button a-button--primary o-header__cta">
+      Reserva
+    </button>
+  </div>
+</header>

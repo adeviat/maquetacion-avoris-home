@@ -1,0 +1,30 @@
+@use '../../../../styles/mixins' as m;
+@use '../../../../styles/components' as c;
+
+.o-hero {
+    background: c.$hero-bg;
+    color: c.$hero-title-default;
+
+    &__media {
+        background-image: url('https://picsum.photos/800/600?random=1');
+        background-size: cover;
+        background-position: center;
+        min-height: 200px;
+    }
+
+    &__content {
+        padding: m.$space-lg;
+    }
+
+    &__eyebrow {
+        color: c.$hero-eyebrow-color;
+    }
+
+    &__title {
+        color: c.$hero-title-default;
+    }
+
+    &__subtitle {
+        color: c.$hero-subtitle-default;
+    }
+}
