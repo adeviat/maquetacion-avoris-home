@@ -1,0 +1,30 @@
+// Breakpoints
+$bp-mobile: 375px;
+$bp-tablet: 768px;
+$bp-tablet-lg: 992px;
+$bp-desktop: 1200px;
+
+@mixin respond-up($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (min-width: $bp-tablet) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-lg {
+        @media (min-width: $bp-tablet-lg) {
+            @content;
+        }
+    } @else if $breakpoint == desktop {
+        @media (min-width: $bp-desktop) {
+            @content;
+        }
+    }
+}
+
+// Spacing scale
+$space-2xs: 0.25rem;
+$space-xs: 0.5rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
