@@ -1,0 +1,58 @@
+@use '../../../../styles/components' as c;
+@use '../../../../styles/mixins' as m;
+
+.o-footer {
+  background-color: c.$footer-bg-default;
+  color: c.$footer-list-item-text-default;
+
+  &__top,
+  &__bottom {
+    max-width: m.$bp-desktop;
+    margin: 0 auto;
+  }
+
+  &__top {
+    padding: m.$space-md m.$space-lg;
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo {
+    height: 28px;
+    display: block;
+  }
+
+  &__bottom {
+    padding: m.$space-md;
+    background-color: c.$footer-bg-bottom-bar-deafult;
+    text-align: center;
+  }
+
+  &__legal {
+    font-weight: 700;
+    font-size: 0.85rem;
+    line-height: m.$space-md;
+    margin: 0;
+    color: c.$footer-fr-bottom-bar-default;
+  }
+
+  @include m.respond-up(tablet-lg) {
+    &__top,
+    &__bottom {
+      max-width: m.$bp-desktop;
+      margin: 0 auto;
+      padding-inline: m.$space-2xl;
+    }
+
+    &__top {
+      text-align: center;
+    }
+  }
+}
