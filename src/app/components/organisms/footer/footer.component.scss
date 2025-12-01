@@ -15,7 +15,7 @@
     padding: m.$space-md m.$space-lg;
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 56px;
   }
 
   &__brand {
@@ -52,7 +52,13 @@
     }
 
     &__top {
+      display: block;
       text-align: center;
+      height: 128px;
+    }
+
+    &__brand {
+      display: inline-flex;
     }
   }
 }
