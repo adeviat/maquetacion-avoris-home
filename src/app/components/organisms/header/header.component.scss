@@ -138,13 +138,20 @@
       display: none;
     }
 
-    &__nav-desktop,
-    &__cta {
+    &__nav-desktop{
       display: inline-flex;
     }
 
+    .a-button {
+        @include m.button-base;
+
+        &--primary {
+            background-color: c.$btn-primary-bg-default;
+            color: c.$btn-primary-text-default;
+        }
+    }
+
     &__nav-desktop {
-      flex: 1;
       margin-left: m.$space-xl;
     }
 
@@ -161,7 +168,7 @@
       display: inline-flex;
       align-items: center;
       gap: m.$space-xs;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 500;
       color: c.$tab-text-selected;
       text-decoration: none;
