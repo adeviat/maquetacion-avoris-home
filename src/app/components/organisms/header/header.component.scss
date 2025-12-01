@@ -2,6 +2,7 @@
 @use '../../../../styles/mixins' as m;
 
 .o-header {
+  position: relative;
   background-color: c.$navbar-bg-default;
   color: c.$hero-title-default;
 
@@ -15,6 +16,7 @@
     gap: m.$space-md;
   }
 
+  /* Brand / logo */
   &__brand {
     display: inline-flex;
     align-items: center;
@@ -22,16 +24,17 @@
   }
 
   &__logo {
+    display: block;
     height: 28px;
   }
 
-  /* Hamburguesa: visible en mobile / tablet small */
+  /* Hamburguesa (mobile / tablet small) */
   &__menu-toggle {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    width: 32px;
+    width: 22px;
     height: 24px;
     padding: 0;
     border: none;
@@ -45,47 +48,79 @@
     background-color: c.$navbar-menu-icon-default;
   }
 
-  /* Navegación y CTA ocultas en mobile */
+  /* Navegación (mobile: oculto, se abre con toggle) */
   &__nav {
     display: none;
+    position: absolute;
+    inset-inline: 0;
+    top: 64px; // aprox. altura del header
+    padding: m.$space-md m.$space-lg;
+    background-color: c.$navbar-bg-default;
+    z-index: 10;
   }
 
+  &__nav--open {
+    display: block;
+  }
+
+  &__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: m.$space-md;
+  }
+
+  &__nav-item {
+    // espacio vertical ya gestionado por gap
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: m.$space-xs;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: c.$tab-text-selected;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__nav-item--active &__nav-link {
+    color: c.$tab-text-selected;
+  }
+
+  /* CTA "Reserva" (mobile: oculto) */
   &__cta {
     display: none;
   }
 
-  /* Tablet large y Desktop */
+  /* Breakpoint: tablet large / desktop */
   @include m.respond-up(tablet-lg) {
+    &__inner {
+      padding: m.$space-lg m.$space-2xl;
+      gap: m.$space-xl;
+    }
+
     &__menu-toggle {
       display: none;
     }
 
     &__nav {
+      position: static;
       display: block;
-      margin-left: m.$space-xl;
+      padding: 0;
+      box-shadow: none;
       flex: 1;
     }
 
     &__nav-list {
-      display: flex;
+      flex-direction: row;
       align-items: center;
+      justify-content: flex-start;
       gap: m.$space-xl;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    &__nav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: m.$space-xs;
-      font-weight: 500;
-      color: c.$filter-link-default;
-      text-decoration: none;
-    }
-
-    &__nav-item--active &__nav-link {
-      color: c.$filter-link-default;
     }
 
     &__cta {
