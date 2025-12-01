@@ -1,4 +1,13 @@
 @use 'styles/globals';
-@use 'styles/mixins';
-@use 'styles/components';
 @use 'styles/semantic';
+@use 'styles/components';
+@use 'styles/mixins';
+
+// Import de fuente DESPUÉS de los @use
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+html,
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+}
