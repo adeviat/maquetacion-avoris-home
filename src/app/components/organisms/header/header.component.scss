@@ -16,7 +16,6 @@
     gap: m.$space-md;
   }
 
-  /* Brand / logo */
   &__brand {
     display: inline-flex;
     align-items: center;
@@ -24,108 +23,143 @@
   }
 
   &__logo {
-    display: block;
     height: 28px;
+    display: block;
   }
 
-  /* Hamburguesa (mobile / tablet small) */
-  &__menu-toggle {
+   &__menu-toggle {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
+    align-items: center;
     width: 22px;
-    height: 24px;
+    height: 32px;
     padding: 0;
     border: none;
     background: transparent;
     cursor: pointer;
   }
 
-  &__menu-line {
+  &__burger-line {
+    display: block;
+    width: 20px;
     height: 2px;
+    margin-block: 3px;
     border-radius: 1px;
     background-color: c.$navbar-menu-icon-default;
   }
 
-  /* Navegación (mobile: oculto, se abre con toggle) */
-  &__nav {
+  &__icon--close {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: c.$navbar-menu-icon-default;
+  }
+
+  &__nav-desktop,
+  &__cta {
     display: none;
-    position: absolute;
-    inset-inline: 0;
-    top: 64px; // aprox. altura del header
-    padding: m.$space-md m.$space-lg;
+  }
+
+  &__nav-overlay {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: 100%;
+    max-width: 320px;
     background-color: c.$navbar-bg-default;
-    z-index: 10;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.25s ease-out;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
   }
 
-  &__nav--open {
-    display: block;
+  &__nav-overlay--open {
+    transform: translateX(0);
   }
 
-  &__nav-list {
+  &__overlay-header {
+    padding: m.$space-md m.$space-lg;
+    border-bottom: 1px solid c.$navbar-menu-icon-hover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__overlay-title {
+    font-weight: 600;
+  }
+
+  &__overlay-close {
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: c.$navbar-menu-icon-default;
+  }
+
+  &__overlay-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: m.$space-lg;
     display: flex;
     flex-direction: column;
     gap: m.$space-md;
   }
 
-  &__nav-item {
-    // espacio vertical ya gestionado por gap
-  }
-
-  &__nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: m.$space-xs;
-    font-size: 0.95rem;
+  &__overlay-link {
+    font-size: 1.05rem;
     font-weight: 500;
-    letter-spacing: 0.01em;
-    color: c.$tab-text-selected;
+    color: c.$tag-primary-text;
     text-decoration: none;
-    white-space: nowrap;
   }
 
-  &__nav-item--active &__nav-link {
+  &__overlay-item--active &__overlay-link {
     color: c.$tab-text-selected;
   }
 
-  /* CTA "Reserva" (mobile: oculto) */
-  &__cta {
-    display: none;
-  }
-
-  /* Breakpoint: tablet large / desktop */
   @include m.respond-up(tablet-lg) {
-    &__inner {
-      padding: m.$space-lg m.$space-2xl;
-      gap: m.$space-xl;
-    }
-
     &__menu-toggle {
       display: none;
     }
 
-    &__nav {
-      position: static;
-      display: block;
-      padding: 0;
-      box-shadow: none;
+    &__nav-overlay {
+      display: none;
+    }
+
+    &__nav-desktop,
+    &__cta {
+      display: inline-flex;
+    }
+
+    &__nav-desktop {
       flex: 1;
+      margin-left: m.$space-xl;
     }
 
     &__nav-list {
-      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
       align-items: center;
-      justify-content: flex-start;
       gap: m.$space-xl;
     }
 
-    &__cta {
+    &__nav-link {
       display: inline-flex;
-      margin-left: m.$space-xl;
+      align-items: center;
+      gap: m.$space-xs;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: c.$tab-text-selected;
+      text-decoration: none;
+    }
+
+    &__nav-item--active &__nav-link {
+      color: c.$tab-text-selected;
     }
   }
 }
