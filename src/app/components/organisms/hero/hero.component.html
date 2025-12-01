@@ -1,14 +1,53 @@
 <section class="o-hero" aria-labelledby="hero-title">
-    <div class="o-hero__media">
-    </div>
+  <div class="o-hero__media">
+    <img
+      [src]="activeSlide.image"
+      [alt]="activeSlide.title"
+      class="o-hero__image"
+    />
+  </div>
 
+  <div class="o-hero__overlay">
     <div class="o-hero__content">
-        <h1 id="hero-title" class="o-hero__title">Ruta por Australia</h1>
-        <p class="o-hero__subtitle">Si teva l aventura no te lo puedes perder</p>
+      <h1 class="o-hero__title" id="hero-title">
+        {{ activeSlide.title }}
+      </h1>
+      <p class="o-hero__subtitle">
+        {{ activeSlide.subtitle }}
+      </p>
 
-        <div class="o-hero__actions">
-            <button class="a-button a-button--primary">Más información</button>
-        </div>
+      <button class="a-button a-button--primary o-hero__cta">
+        {{ activeSlide.ctaLabel }}
+      </button>
     </div>
 
+    <button
+      type="button"
+      class="o-hero__arrow o-hero__arrow--prev"
+      aria-label="Anterior"
+      (click)="prev()"
+    >
+      ‹
+    </button>
+    <button
+      type="button"
+      class="o-hero__arrow o-hero__arrow--next"
+      aria-label="Siguiente"
+      (click)="next()"
+    >
+      ›
+    </button>
+
+    <div class="o-hero__dots" role="tablist">
+      <button
+        *ngFor="let slide of slides; let i = index"
+        class="o-hero__dot"
+        [class.o-hero__dot--active]="i === activeIndex"
+        type="button"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Slide ' + (i + 1)"
+        [attr.aria-current]="i === activeIndex ? 'true' : null"
+      ></button>
+    </div>
+  </div>
 </section>
