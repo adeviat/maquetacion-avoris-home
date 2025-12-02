@@ -1,0 +1,152 @@
+@use '../../../../styles/globals' as g;
+@use '../../../../styles/components' as c;
+@use '../../../../styles/mixins' as m;
+
+.m-trip-card {
+  background-color: c.$card-bg-default;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: c.$card-trip-shadow;
+  display: flex;
+  flex-direction: column;
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__tag {
+    position: absolute;
+    top: m.$space-md;
+    right: m.$space-md;
+    padding: m.$space-xs m.$space-md;
+    border-radius: 999px;
+    background-color: g.$color-brand-orange;
+    color: c.$card-title-default;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: m.$space-md;
+  }
+
+  &__location {
+    font-size: 0.9rem;
+    color: c.$btn-primary-bg-default;
+    margin: m.$space-xs;
+  }
+
+  &__duration {
+    margin-left: m.$space-xs;
+    color: c.$card-title-default;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    color: c.$card-title-default;
+    margin: m.$space-xs;
+  }
+
+  &__footer {
+    padding: 0 m.$space-lg m.$space-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: m.$space-lg;
+  }
+
+  &__price-label {
+    font-size: 0.8rem;
+    color: c.$card-title-default;
+  }
+
+  &__price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: c.$card-title-default;
+  }
+
+  &__cta {
+    white-space: nowrap;
+  }
+
+   &__bottom {
+    padding: m.$space-md m.$space-lg m.$space-lg;
+    background-color: c.$footer-bg-default;
+    border-top: 1px solid c.$footer-bg-bottom-bar-deafult;
+    display: flex;
+    flex-direction: column;
+    gap: m.$space-md;
+  }
+
+  &__pricing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: m.$space-lg;
+  }
+
+  &__breakdown {
+    padding: 0;
+    border: none;
+    background: none;
+    color: c.$btn-primary-bg-default;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__breakdown-icon {
+    font-size: 0.8rem;
+  }
+
+  &__price-wrapper {
+    text-align: right;
+  }
+
+  &__price-label {
+    display: block;
+    font-size: 0.8rem;
+    color: c.$card-title-default;
+  }
+
+  &__price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: c.$card-title-default;
+  }
+
+  &__cta {
+    width: 100%;
+  }
+}
+
+.a-button {
+  @include m.button-base;
+
+  &--primary {
+    background-color: c.$btn-primary-bg-default;
+    color: c.$btn-primary-text-default;
+  }
+
+  &--secondary {
+    width: 100%;
+    background-color: transparent;
+    color: c.$btn-primary-bg-default;
+    border-color: c.$btn-primary-bg-default;
+  }
+}

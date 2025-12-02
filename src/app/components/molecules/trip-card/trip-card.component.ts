@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-trip-card',
-  imports: [],
+  standalone: true,
   templateUrl: './trip-card.component.html',
-  styleUrl: './trip-card.component.scss'
+  styleUrls: ['./trip-card.component.scss'],
 })
-export class TripCardComponent {
-
-}
+export class TripCardComponent {}

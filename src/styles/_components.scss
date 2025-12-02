@@ -138,10 +138,10 @@ $checkbox-box-border-default: s.$bd-primary-dark-default;
 $checkbox-box-border-hover: s.$bd-primary-dark-hover;
 $checkbox-box-border-selected: s.$bd-primary-dark-default;
 $checkbox-box-border-selected-hover: s.$bd-primary-dark-hover;
-$chackbox-text-default: s.$fr-on-white-default;
-$chackbox-text-hover: s.$fr-on-white-hover;
-$chackbox-text-selected: s.$fr-on-white-default;
-$chackbox-text-selected-hover: s.$fr-on-white-hover;
+$checkbox-text-default: s.$fr-on-white-default;
+$checkbox-text-hover: s.$fr-on-white-hover;
+$checkbox-text-selected: s.$fr-on-white-default;
+$checkbox-text-selected-hover: s.$fr-on-white-hover;
 
 // Cards
 $card-bg-default: s.$bg-white-default;
@@ -156,6 +156,7 @@ $card-breakdown-foreground-default: s.$fr-primary-dark-default;
 $card-breakdown-foreground-hover: s.$fr-primary-dark-hover;
 $card-breakdown-chevron-default: s.$ic-primary-dark-default;
 $card-breakdown-chevron-hover: s.$ic-primary-dark-hover;
+$card-trip-shadow: g.$shadow-sm;
 
 // Circuit card
 $circuit-bottom-bar-bg-default: s.$bg-secondary-light-default;
