@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { TripCardComponent, Trip } from '../../molecules/trip-card/trip-card.component';
+import { FiltersComponent } from '../../organisms/filters/filters.component';
 
 type TripSection = {
   region: string;
@@ -10,7 +11,7 @@ type TripSection = {
 @Component({
   selector: 'app-trip-grid',
   standalone: true,
-  imports: [NgFor, TripCardComponent],
+  imports: [NgFor, TripCardComponent, FiltersComponent],
   templateUrl: './trip-grid.component.html',
   styleUrls: ['./trip-grid.component.scss'],
 })
@@ -176,5 +177,15 @@ export class TripGridComponent {
       region,
       trips,
     }));
+  }
+
+  filtersOpen = false;
+
+  openFilters() {
+    this.filtersOpen = true;
+  }
+
+  closeFilters() {
+    this.filtersOpen = false;
   }
 }

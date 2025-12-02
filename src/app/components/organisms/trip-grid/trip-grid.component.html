@@ -11,25 +11,36 @@
         <button
         type="button"
         class="a-button a-button--ghost o-trip-grid__filters-button"
+        (click)="openFilters()"
         >
             <span class="o-trip-grid__filters-icon">☰</span>
             <span>Ver filtros</span>
         </button>
     </header>
 
-  <section
-    class="o-trip-grid__section"
-    *ngFor="let section of sections"
-  >
-    <h3 class="o-trip-grid__section-title">
-      {{ section.region }}
-    </h3>
+    <div class="o-trip-grid__layout">
+        <div class="o-trip-grid__filters">
+            <app-filters [isOpen]="filtersOpen"></app-filters>
+        </div>  
 
-    <div class="o-trip-grid__list">
-      <app-trip-card
-        *ngFor="let trip of section.trips"
-        [trip]="trip"
-      ></app-trip-card>
+        <div class="o-trip-grid__main">
+            <section
+                class="o-trip-grid__section"
+                *ngFor="let section of sections"
+            >
+                <h3 class="o-trip-grid__section-title">
+                {{ section.region }}
+                </h3>
+
+                <div class="o-trip-grid__list">
+                <app-trip-card
+                    *ngFor="let trip of section.trips"
+                    [trip]="trip"
+                ></app-trip-card>
+                </div>
+            </section>
+        </div>
     </div>
-  </section>
+
+  
 </section>

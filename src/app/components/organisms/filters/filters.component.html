@@ -1,1 +1,88 @@
-<p>filters works!</p>
+<div *ngIf="isOpen" class="o-filters__backdrop"></div>
+
+<aside class="o-filters">
+  <header class="o-filters__header">
+    <h2 class="o-filters__title">Filtrar mi búsqueda</h2>
+
+    <!-- Botón cerrar solo para mobile/tablet; en desktop luego lo ocultamos por CSS -->
+    <button
+      type="button"
+      class="o-filters__close"
+      aria-label="Cerrar filtros"
+    >
+      ×
+    </button>
+  </header>
+
+  <div class="o-filters__content">
+    <!-- Destinos -->
+    <section class="o-filters__section">
+      <button class="o-filters__section-toggle" type="button">
+        <span class="o-filters__section-icon">🌍</span>
+        <span class="o-filters__section-title">Destinos</span>
+        <span class="o-filters__section-arrow">›</span>
+      </button>
+    </section>
+
+    <!-- Aventura -->
+    <section class="o-filters__section">
+      <button class="o-filters__section-toggle" type="button">
+        <span class="o-filters__section-icon">🏔️</span>
+        <span class="o-filters__section-title">Aventura</span>
+        <span class="o-filters__section-arrow">˅</span>
+      </button>
+
+      <div class="o-filters__section-body">
+        <!-- Aquí luego maquetamos los checkboxes reales -->
+        <label class="o-filters__option">
+          <input type="checkbox" />
+          <span class="o-filters__option-label">Quads</span>
+        </label>
+
+        <label class="o-filters__option">
+          <input type="checkbox" checked />
+          <span class="o-filters__option-label">Parapente</span>
+        </label>
+
+        <label class="o-filters__option">
+          <input type="checkbox" checked />
+          <span class="o-filters__option-label">Explora</span>
+        </label>
+
+        <button type="button" class="o-filters__more">
+          Ver 21 más
+        </button>
+      </div>
+    </section>
+
+    <!-- Alojamiento -->
+    <section class="o-filters__section">
+      <button class="o-filters__section-toggle" type="button">
+        <span class="o-filters__section-icon">🏨</span>
+        <span class="o-filters__section-title">Alojamiento</span>
+        <span class="o-filters__section-arrow">›</span>
+      </button>
+    </section>
+
+    <!-- Precio -->
+    <section class="o-filters__section">
+      <button class="o-filters__section-toggle" type="button">
+        <span class="o-filters__section-icon">🏷️</span>
+        <span class="o-filters__section-title">Precio</span>
+        <span class="o-filters__section-arrow">˅</span>
+      </button>
+
+      <div class="o-filters__section-body o-filters__section-body--price">
+        <button type="button" class="o-filters__price-field">
+          <span class="o-filters__price-icon">🏷️</span>
+          <span class="o-filters__price-label">Mínimo</span>
+        </button>
+
+        <button type="button" class="o-filters__price-field">
+          <span class="o-filters__price-icon">🏷️</span>
+          <span class="o-filters__price-label">Máximo</span>
+        </button>
+      </div>
+    </section>
+  </div>
+</aside>

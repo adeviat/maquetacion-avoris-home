@@ -1,0 +1,43 @@
+@use '../../../../styles/mixins' as m;
+@use '../../../../styles/components' as c;
+
+.o-filters {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 320px;
+  width: 80%;
+  transform: translateX(100%);
+  transition: transform 220ms ease-out;
+  z-index: 1100;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+  }
+}
+
+@include m.respond-up(desktop) {
+  .o-filters {
+    position: static;
+    height: auto;
+    transform: none;
+    box-shadow: none;
+    width: 260px;
+  }
+
+  .o-filters__backdrop {
+    display: none;
+  }
+
+  .o-filters__close {
+    display: none;
+  }
+}

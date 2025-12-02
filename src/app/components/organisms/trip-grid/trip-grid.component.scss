@@ -76,4 +76,17 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+
+  &__layout {
+    display: block;
+  }
+
+  @include m.respond-up(desktop) {
+    &__layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: m.$space-2xl;
+      align-items: flex-start;
+    }
+  }
 }
