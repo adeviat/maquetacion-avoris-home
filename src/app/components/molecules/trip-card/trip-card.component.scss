@@ -9,6 +9,14 @@
   box-shadow: c.$card-trip-shadow;
   display: flex;
   flex-direction: column;
+  transition:
+    transform 180ms ease-out,
+    box-shadow 180ms ease-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 50px rgba(0, 0, 0, 0.12);
+  }
 
   &__image-wrapper {
     position: relative;
@@ -148,6 +156,16 @@
     background-color: transparent;
     color: c.$btn-primary-bg-default;
     border-color: c.$btn-primary-bg-default;
+    transition:
+      background-color 160ms ease-out,
+      color 160ms ease-out,
+      box-shadow 160ms ease-out;
+
+    &:hover {
+      background-color: c.$btn-primary-bg-default;
+      color: c.$card-bg-default;
+      box-shadow: 0 0 0 2px rgba(c.$btn-primary-bg-default, 0.2);
+    }
   }
 }
 
