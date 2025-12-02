@@ -150,3 +150,117 @@
     border-color: c.$btn-primary-bg-default;
   }
 }
+
+.m-price-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: m.$space-lg;
+  opacity: 1;
+  transition: opacity 180ms ease-out;
+
+  &__panel {
+    width: 100%;
+    max-width: 520px;
+    background-color: c.$navbar-bg-default;
+    border-radius: 1.5rem;
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    transform: translateY(8px);
+    opacity: 1;
+    transition:
+      transform 220ms ease-out,
+      opacity 220ms ease-out;
+  }
+
+  &--hidden {
+    opacity: 0;
+
+    .m-price-popup__panel {
+      transform: translateY(24px);
+      opacity: 0;
+    }
+  }
+
+  &__header {
+    padding: m.$space-md m.$space-xl;
+    border-bottom: 1px solid c.$overlay-border-default;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__close {
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    color: c.$card-title-default;
+  }
+
+  &__body {
+    padding: m.$space-lg m.$space-xl;
+  }
+
+  &__trip {
+    margin: 0 0 m.$space-md;
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+      margin-left: m.$space-xs;
+    }
+  }
+
+  &__rows {
+    margin: 0;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: m.$space-lg;
+    font-size: 0.95rem;
+    padding-block: m.$space-xs;
+  }
+
+  &__row dt {
+    color: c.$card-title-default;
+  }
+
+  &__row dd {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__footer {
+    padding: m.$space-md m.$space-xl;
+    border-top: 1px solid c.$card-title-default;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  &__footer-label {
+    color: c.$card-title-default;
+  }
+}
+
+@include m.respond-up(tablet) {
+  .m-price-popup {
+    &__panel {
+      max-width: 560px;
+    }
+  }
+}
