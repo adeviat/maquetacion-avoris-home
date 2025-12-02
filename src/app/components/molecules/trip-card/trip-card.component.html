@@ -31,8 +31,6 @@
         <span class="m-trip-card__breakdown-icon">˅</span>
       </button>
 
-      <p>Debug: {{ showBreakdown }}</p>
-
       <div class="m-trip-card__price-wrapper">
         <span class="m-trip-card__price-label">Desde</span>
         <span class="m-trip-card__price">
@@ -47,7 +45,6 @@
   </div>
 </article>
 
-<!-- Popup de desglose, ligado a showBreakdown del MISMO componente -->
 <div
   class="m-price-popup"
   *ngIf="showBreakdown"
