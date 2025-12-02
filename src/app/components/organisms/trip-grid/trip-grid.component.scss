@@ -24,6 +24,17 @@
 
   &__filters-button {
     margin-top: m.$space-xl;
+    display: inline-flex;
+    align-items: center;
+    gap: m.$space-xs;
+    border-radius: 50px;
+    border: none;
+    padding: m.$space-xs m.$space-sm;
+    background-color: c.$footer-bg-default;
+  }
+
+  &__filters-icon {
+    font-size: 1.1rem;
   }
 
   &__section-title {
@@ -39,12 +50,28 @@
   }
 
   @include m.respond-up(tablet) {
+     &__title {
+      font-size: 2.6rem;
+    }
+
+    &__subtitle {
+      font-size: 1.05rem;
+    }
+
     &__list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @include m.respond-up(desktop) {
+    &__header {
+      margin-bottom: m.$space-md;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+    
     &__list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

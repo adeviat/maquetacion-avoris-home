@@ -1,89 +1,95 @@
-<article class="m-trip-card">
+<article class="m-trip-card testeto-aqui-es">
   <div class="m-trip-card__image-wrapper">
     <img
-      src="https://picsum.photos/600/400?random=11"
-      alt="Descubre Bangkok con Iberojet"
+      [src]="trip.image"
+      [alt]="trip.title"
       class="m-trip-card__image"
     />
 
-    <span class="m-trip-card__tag">Quads</span>
+    <span class="m-trip-card__tag">{{ trip.tag }}</span>
   </div>
 
-    <div class="m-trip-card__body">
-        <p class="m-trip-card__location">
-        Marruecos, África
-        <span class="m-trip-card__duration">9 días</span>
-        </p>
+  <div class="m-trip-card__body">
+    <p class="m-trip-card__location">
+      {{ trip.country }}
+      <span class="m-trip-card__duration">{{ trip.days }} días</span>
+    </p>
 
-        <h4 class="m-trip-card__title">
-        Descubre Bangkok con Iberojet
-        </h4>
+    <h4 class="m-trip-card__title">
+      {{ trip.title }}
+    </h4>
+  </div>
+
+  <div class="m-trip-card__bottom">
+    <div class="m-trip-card__pricing-row">
+      <button
+        type="button"
+        class="m-trip-card__breakdown"
+        (click)="openBreakdown()"
+      >
+        Ver desglose
+        <span class="m-trip-card__breakdown-icon">˅</span>
+      </button>
+
+      <p>Debug: {{ showBreakdown }}</p>
+
+      <div class="m-trip-card__price-wrapper">
+        <span class="m-trip-card__price-label">Desde</span>
+        <span class="m-trip-card__price">
+          {{ trip.priceFrom }} €
+        </span>
+      </div>
     </div>
 
-    <div class="m-trip-card__bottom">
-        <div class="m-trip-card__pricing-row">
-            <button class="m-trip-card__breakdown" (click)="openBreakdown()">
-            Ver desglose
-                <span class="m-trip-card__breakdown-icon">˅</span>
-            </button>
-
-            <div class="m-trip-card__price-wrapper">
-                <span class="m-trip-card__price-label">Desde</span>
-                <span class="m-trip-card__price">248,00 €</span>
-            </div>
-        </div>
-
-        <button class="a-button a-button--secondary m-trip-card__cta">
-            Reservar
-        </button>
-    </div>
-
-    <div
-    class="m-price-popup"
-    *ngIf="showBreakdown"
-    (click)="closeBreakdown()"
-    >
-    <div
-        class="m-price-popup__panel"
-        (click)="$event.stopPropagation()"
-    >
-        <header class="m-price-popup__header">
-        <h3 class="m-price-popup__title">Desglose de precios</h3>
-        <button
-            type="button"
-            class="m-price-popup__close"
-            aria-label="Cerrar"
-            (click)="closeBreakdown()"
-        >
-            ×
-        </button>
-        </header>
-
-        <section class="m-price-popup__body">
-            <h4 class="m-price-popup__trip">
-                Marruecos, África <span>9 días</span>
-            </h4>
-
-            <dl class="m-price-popup__rows">
-                <div class="m-price-popup__row">
-                    <dt>Precio antes de impuestos</dt>
-                    <dd>1.124,00 €</dd>
-                </div>
-                <div class="m-price-popup__row">
-                    <dt>Impuesto</dt>
-                    <dd>4,43 €</dd>
-                </div>
-                <div class="m-price-popup__row">
-                    <dt>Lorem ipsum</dt>
-                    <dd>150,42 €</dd>
-                </div>
-            </dl>
-        </section>
-
-        <footer class="m-price-popup__footer">
-            <span class="m-price-popup__footer-label">Precio final</span>
-            <span class="m-price-popup__footer-value">2.455,00 €</span>
-        </footer>
-    </div>
-    </div>
+    <button class="a-button a-button--secondary m-trip-card__cta">
+      Reservar
+    </button>
+  </div>
 </article>
+
+<!-- Popup de desglose, ligado a showBreakdown del MISMO componente -->
+<div
+  class="m-price-popup"
+  *ngIf="showBreakdown"
+  (click)="closeBreakdown()"
+>
+  <div
+    class="m-price-popup__panel"
+    (click)="$event.stopPropagation()"
+  >
+    <header class="m-price-popup__header">
+      <h3 class="m-price-popup__title">Desglose de precios</h3>
+      <button
+        type="button"
+        class="m-price-popup__close"
+        aria-label="Cerrar"
+        (click)="closeBreakdown()"
+      >
+        ×
+      </button>
+    </header>
+
+    <section class="m-price-popup__body">
+      <h4 class="m-price-popup__trip">
+        {{ trip.country }} <span>{{ trip.days }} días</span>
+      </h4>
+
+      <dl class="m-price-popup__rows">
+        <div
+          class="m-price-popup__row"
+          *ngFor="let item of trip.breakdown"
+        >
+          <dt>{{ item.label }}</dt>
+          <dd>{{ item.amount }} €</dd>
+        </div>
+      </dl>
+    </section>
+
+    <footer class="m-price-popup__footer">
+      <span class="m-price-popup__footer-label">Precio final</span>
+      <span class="m-price-popup__footer-value">
+        {{ trip.finalPrice }} €
+      </span>
+    </footer>
+  </div>
+</div>
