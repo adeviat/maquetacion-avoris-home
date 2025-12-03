@@ -9,7 +9,7 @@ Proyecto front‑end que replica la landing de “Waveless”: un grid de viajes
 ### Framework y arquitectura
 
 - **Angular con Standalone Components**  
-  Se ha utilizado Angular en modo standalone para evitar NgModules y tener componentes más aislados y fáciles de reutilizar y razonar. Cada pieza de UI (header, hero, filtros, grid, card, footer…) es un componente standalone que declara explícitamente sus dependencias en `imports`.[web:24][web:25]
+  Se ha utilizado Angular en modo standalone para evitar NgModules y tener componentes más aislados y fáciles de reutilizar y razonar. Cada pieza de UI (header, hero, filtros, grid, card, footer…) es un componente standalone que declara explícitamente sus dependencias en `imports`.
 
 - **Arquitectura por Atomic Design**  
   La estructura de componentes sigue una aproximación inspirada en Atomic Design:
