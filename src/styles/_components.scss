@@ -12,6 +12,13 @@ $hero-bg: s.$bg-white-default;
 $hero-eyebrow-color: s.$bg-white-default;
 $hero-title-default: s.$fr-on-dark-default;
 $hero-subtitle-default: s.$fr-on-dark-default;
+$hero-arrow-size: 40px;
+$hero-dot-size: 10px;
+$hero-dot-height: 14px;
+$hero-arrow-bg: g.$color-primary-low-alpha;
+$hero-dot-inactive-bg: g.$shadow-sm;
+$hero-content-max-width: 26rem;
+$hero-cta-min-width-mobile: 260px;
 
 // Tab / Navbar
 $tab-selection-indicator-bg-active: s.$bg-secondary-medium-default;
