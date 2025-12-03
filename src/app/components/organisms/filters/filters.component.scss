@@ -166,6 +166,18 @@
   padding: 0;
 }
 
+@include m.respond-up(tablet) {
+  .o-filters {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+}
+
 @include m.respond-up(desktop) {
   .o-filters {
     position: static;
