@@ -1,5 +1,10 @@
+@use '../../../../styles/globals' as g;
 @use '../../../../styles/components' as c;
 @use '../../../../styles/mixins' as m;
+
+$footer-top-height: 128px;
+$footer-logo-height: 28px;
+$footer-legal-weight: 700;
 
 .o-footer {
   background-color: c.$footer-bg-default;
@@ -7,15 +12,15 @@
 
   &__top,
   &__bottom {
-    max-width: m.$bp-desktop;
+    max-width: g.$bp-desktop;
     margin: 0 auto;
   }
 
   &__top {
-    padding: m.$space-md m.$space-lg;
+    padding: g.$space-md g.$space-lg;
     display: flex;
     align-items: center;
-    height: 56px;
+    height: $footer-top-height;
   }
 
   &__brand {
@@ -25,20 +30,20 @@
   }
 
   &__logo {
-    height: 28px;
+    height: $footer-logo-height;
     display: block;
   }
 
   &__bottom {
-    padding: m.$space-md;
+    padding: g.$space-md;
     background-color: c.$footer-bg-bottom-bar-deafult;
     text-align: center;
   }
 
   &__legal {
-    font-weight: 700;
-    font-size: 0.85rem;
-    line-height: m.$space-md;
+    font-weight: $footer-legal-weight;
+    font-size: g.$font-text-third;
+    line-height: g.$space-md;
     margin: 0;
     color: c.$footer-fr-bottom-bar-default;
   }
@@ -46,19 +51,13 @@
   @include m.respond-up(tablet-lg) {
     &__top,
     &__bottom {
-      max-width: 100%;
-      margin: 0 auto;
-      padding-inline: m.$space-2xl;
+      padding-inline: g.$space-2xl;
+      min-width: 100%;
     }
 
     &__top {
       display: block;
       text-align: center;
-      height: 128px;
-    }
-
-    &__brand {
-      display: inline-flex;
     }
   }
 }
