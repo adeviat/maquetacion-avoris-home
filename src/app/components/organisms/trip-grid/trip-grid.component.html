@@ -27,8 +27,10 @@
     <div class="o-trip-grid__layout">
         <div class="o-trip-grid__filters">
             <app-filters
-            [isOpen]="filtersOpen"
-            (isOpenChange)="filtersOpen = $event"
+                [isOpen]="filtersOpen"
+                (isOpenChange)="filtersOpen = $event"
+                [valueActivities]="selectedActivities"
+                (activitiesChange)="selectedActivities = $event"
             ></app-filters>
         </div>  
 

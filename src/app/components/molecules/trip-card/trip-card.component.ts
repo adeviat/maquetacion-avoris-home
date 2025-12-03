@@ -17,6 +17,7 @@ export interface Trip {
   image: string;
   breakdown: TripBreakdownItem[];
   finalPrice: number;
+  activities: string[];
 }
 
 @Component({

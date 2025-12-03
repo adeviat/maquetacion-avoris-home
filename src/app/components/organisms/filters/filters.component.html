@@ -92,7 +92,11 @@
       >
         <div class="accordion-body o-filters__section-body">
           <label class="o-filters__option">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              [checked]="valueActivities.has('quads')"
+              (change)="onActivityChange('quads', $event)"
+            />
             <span class="o-filters__option-label">Quads</span>
             <button
               type="button"
@@ -110,7 +114,11 @@
           </label>
 
           <label class="o-filters__option">
-            <input type="checkbox" checked />
+            <input
+              type="checkbox"
+              [checked]="valueActivities.has('parapente')"
+              (change)="onActivityChange('parapente', $event)"
+            />
             <span class="o-filters__option-label">Parapente</span>
             <button
               type="button"
@@ -128,7 +136,11 @@
           </label>
 
           <label class="o-filters__option">
-            <input type="checkbox" checked />
+            <input
+              type="checkbox"
+              [checked]="valueActivities.has('explora')"
+              (change)="onActivityChange('explora', $event)"
+            />
             <span class="o-filters__option-label">Explora</span>
             <button
               type="button"

@@ -32,6 +32,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['quads']
       },
     {
       id: 2,
@@ -48,6 +49,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['parapente']
     },
     {
       id: 3,
@@ -64,6 +66,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['explora'],
     },
     {
       id: 4,
@@ -80,6 +83,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['quads'],
     },
     {
       id: 5,
@@ -96,6 +100,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['parapente'],
     },
     {
       id: 6,
@@ -112,6 +117,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['explora'],
     },
     {
       id: 7,
@@ -128,6 +134,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['quads'],
     },
     {
       id: 8,
@@ -144,6 +151,7 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['parapente'],
     },
     {
       id: 9,
@@ -160,13 +168,28 @@ export class TripGridComponent {
         { label: 'Lorem ipsum', amount: 150.42 },
       ],
       finalPrice: 2455,
+      activities: ['surf'],
     },
   ];
+
+  filtersOpen = false;
+
+  selectedActivities = new Set<string>(['explora', 'parapente']);
+
+  get filteredTrips(): Trip[] {
+    if (this.selectedActivities.size === 0) {
+      return this.trips;
+    }
+
+    return this.trips.filter((trip) =>
+      trip.activities.some((a) => this.selectedActivities.has(a))
+    );
+  }
 
   get sections(): TripSection[] {
     const map = new Map<string, Trip[]>();
 
-    for (const trip of this.trips) {
+    for (const trip of this.filteredTrips) {
       if (!map.has(trip.region)) {
         map.set(trip.region, []);
       }
@@ -178,8 +201,6 @@ export class TripGridComponent {
       trips,
     }));
   }
-
-  filtersOpen = false;
 
   openFilters() {
     this.filtersOpen = true;
