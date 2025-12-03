@@ -46,7 +46,7 @@
   @include m.respond-up(tablet-lg) {
     &__top,
     &__bottom {
-      max-width: m.$bp-desktop;
+      max-width: 100%;
       margin: 0 auto;
       padding-inline: m.$space-2xl;
     }

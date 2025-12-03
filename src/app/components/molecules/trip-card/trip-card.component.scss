@@ -47,6 +47,7 @@
 
   &__location {
     font-size: 0.9rem;
+    font-family: g.$secondary-font;
     color: c.$btn-primary-bg-default;
     margin: m.$space-xs;
   }
@@ -58,6 +59,7 @@
 
   &__title {
     font-size: 1.1rem;
+    font-weight: bold;
     color: c.$card-title-default;
     margin: m.$space-xs;
   }

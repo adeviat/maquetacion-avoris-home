@@ -1,5 +1,6 @@
 @use '../../../../styles/components' as c;
 @use '../../../../styles/mixins' as m;
+@use '../../../../styles/globals' as g;
 
 .o-trip-grid {
   padding: m.$space-2xl m.$space-md;
@@ -10,13 +11,14 @@
   }
 
   &__title {
-    font-size: 2rem;
+    font-family: g.$secondary-font;
+    font-size: m.$space-xl;
     margin-bottom: m.$space-sm;
     color: c.$card-title-default;
   }
 
   &__subtitle {
-    font-size: 1rem;
+    font-size: m.$space-2md;
     color: c.$card-title-default;
     max-width: 32rem;
     margin: 0 auto;
@@ -38,8 +40,9 @@
   }
 
   &__section-title {
+    font-family: g.$secondary-font;
     font-size: 1.3rem;
-    margin-bottom: m.$space-lg;
+    margin: m.$space-lg auto;
     color: c.$card-title-default;
   }
 

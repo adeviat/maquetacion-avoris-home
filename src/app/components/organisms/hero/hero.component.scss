@@ -37,13 +37,14 @@
   }
 
   &__title {
-    font-size: 2rem;
+    font-family: "Syne", sans-serif;
+    font-size: m.$space-xl;
     line-height: 1.1;
     margin-bottom: m.$space-sm;
   }
 
   &__subtitle {
-    font-size: 1rem;
+    font-size: m.$space-lg;
     margin-bottom: m.$space-xl;
   }
 
