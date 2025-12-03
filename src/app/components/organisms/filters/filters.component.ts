@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -10,4 +10,9 @@ import { NgIf } from '@angular/common';
 })
 export class FiltersComponent {
   @Input() isOpen = false;
+  @Output() isOpenChange = new EventEmitter<boolean>();
+
+  close() {
+    this.isOpenChange.emit(false);
+  }
 }

@@ -20,7 +20,10 @@
 
     <div class="o-trip-grid__layout">
         <div class="o-trip-grid__filters">
-            <app-filters [isOpen]="filtersOpen"></app-filters>
+            <app-filters
+            [isOpen]="filtersOpen"
+            (isOpenChange)="filtersOpen = $event"
+            ></app-filters>
         </div>  
 
         <div class="o-trip-grid__main">
@@ -41,6 +44,4 @@
             </section>
         </div>
     </div>
-
-  
 </section>
