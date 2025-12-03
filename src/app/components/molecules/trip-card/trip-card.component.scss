@@ -174,14 +174,11 @@
 .m-price-popup {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: m.$space-lg;
-  opacity: 1;
-  transition: opacity 180ms ease-out;
+  z-index: 2000;
 
   &__panel {
     width: 100%;
@@ -275,6 +272,13 @@
   &__footer-label {
     color: c.$card-title-default;
   }
+}
+
+.m-price-popup__panel {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-width: 280px;
 }
 
 @include m.respond-up(tablet) {

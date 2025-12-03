@@ -33,7 +33,6 @@ export class TripCardComponent {
   showBreakdown = false;
 
   openBreakdown(): void {
-    (window as any).dbg = this;
     this.showBreakdown = true;
   }
 

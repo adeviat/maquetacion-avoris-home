@@ -84,7 +84,13 @@
     display: block;
   }
 
+  @include m.respond-up(tablet) {
+    padding: m.$space-2xl;
+  }
+
   @include m.respond-up(desktop) {
+    padding: m.$space-2xl*3;
+
     &__layout {
       display: grid;
       grid-template-columns: 260px minmax(0, 1fr);
