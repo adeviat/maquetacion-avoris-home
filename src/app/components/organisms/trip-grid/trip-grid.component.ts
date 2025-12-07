@@ -233,4 +233,12 @@ export class TripGridComponent {
   closeFilters() {
     this.filtersOpen = false;
   }
+
+   trackByTripId(index: number, trip: Trip): number {
+    return trip.id;
+  }
+
+  trackBySectionId(index: number, section: TripSection): string {
+    return section.region;
+  }
 }
