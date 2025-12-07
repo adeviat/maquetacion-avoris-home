@@ -27,29 +27,21 @@ export class FiltersComponent implements AfterViewInit, OnChanges {
   @Input() valuePriceRange: { min: number | null; max: number | null } = { min: null, max: null };
   @Output() priceRangeChange = new EventEmitter<{ min: number | null; max: number | null }>();
 
-  tempMinPrice: number | null = null;
-  tempMaxPrice: number | null = null;
-
   @Input() valueDestinations = new Set<string>();
   @Output() destinationsChange = new EventEmitter<Set<string>>();
 
-  @Input() uniqueDestinations: string[] = [];  // ← Las regiones desde TripGrid
-  get totalDestinations(): number {            // ← Para "Ver X más"
-     return this.valueActivities.size + this.valueDestinations.size;
+  @Input() valueAccommodations = new Set<string>();        // ← NUEVO
+  @Output() accommodationsChange = new EventEmitter<Set<string>>(); // ← NUEVO
+
+  @Input() uniqueDestinations: string[] = [];
+  @Input() uniqueAccommodations: string[] = [];            // ← NUEVO
+
+  get totalDestinations(): number {
+    return this.valueActivities.size + this.valueDestinations.size;
   }
 
-  onDestinationChange(destination: string, event: Event) {  // ← Método checkbox
-    const input = event.target as HTMLInputElement;
-    const checked = input.checked;
-    const current = new Set(this.valueDestinations);
-    if (checked) {
-      current.add(destination);
-    } else {
-      current.delete(destination);
-    }
-    this.valueDestinations = current;
-    this.destinationsChange.emit(current);
-  }
+  tempMinPrice: number | null = null;
+  tempMaxPrice: number | null = null;
 
   ngAfterViewInit(): void {
     const tooltipTriggerList = Array.from(
@@ -89,6 +81,32 @@ export class FiltersComponent implements AfterViewInit, OnChanges {
     this.activitiesChange.emit(current);
   }
 
+  onDestinationChange(destination: string, event: Event) {
+    const input = event.target as HTMLInputElement;
+    const checked = input.checked;
+    const current = new Set(this.valueDestinations);
+    if (checked) {
+      current.add(destination);
+    } else {
+      current.delete(destination);
+    }
+    this.valueDestinations = current;
+    this.destinationsChange.emit(current);
+  }
+
+  onAccommodationChange(accommodation: string, event: Event) {  // ← NUEVO
+    const input = event.target as HTMLInputElement;
+    const checked = input.checked;
+    const current = new Set(this.valueAccommodations);
+    if (checked) {
+      current.add(accommodation);
+    } else {
+      current.delete(accommodation);
+    }
+    this.valueAccommodations = current;
+    this.accommodationsChange.emit(current);
+  }
+
   onMinPriceChange(value: number | null) {
     const newRange = { 
       ...this.valuePriceRange, 
@@ -105,5 +123,9 @@ export class FiltersComponent implements AfterViewInit, OnChanges {
     };
     this.valuePriceRange = newRange;
     this.priceRangeChange.emit(newRange);
+  }
+
+  capitalize(str: string): string {  // ← NUEVO
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   }
 }

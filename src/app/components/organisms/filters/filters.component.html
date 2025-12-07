@@ -272,14 +272,26 @@
           <span class="o-filters__section-title">Alojamiento</span>
         </button>
       </h2>
-      <div
-        id="filtersAlojamiento"
-        class="accordion-collapse collapse"
-      >
+      <div id="filtersAlojamiento" class="accordion-collapse collapse">
         <div class="accordion-body o-filters__section-body">
-          <p class="o-filters__placeholder">
-            Próximamente filtros de alojamiento
-          </p>
+          <div *ngFor="let accommodation of uniqueAccommodations" class="o-filters__option">
+            <input
+              type="checkbox"
+              [id]="'alo-' + accommodation"
+              [checked]="valueAccommodations.has(accommodation)"
+              (change)="onAccommodationChange(accommodation, $event)"
+            />
+            <label [for]="'alo-' + accommodation" class="o-filters__option-label">
+              {{ capitalize(accommodation) }}
+            </label>
+            <button type="button" class="o-filters__info" data-bs-toggle="tooltip" data-bs-placement="right" title="Lorem ipsum">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="5.5" stroke="#342E34"/>
+                <rect x="7.25" y="4.66699" width="1.5" height="1.5" rx="0.75" fill="#342E34"/>
+                <rect x="7.5" y="7.5" width="1" height="3.83333" rx="0.5" fill="#342E34"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ type TripSection = {
 export class TripGridComponent implements OnInit {
   selectedActivities = new Set<string>();
   selectedDestinations = new Set<string>();
+  selectedAccommodations = new Set<string>();
   priceRange: { min: number | null; max: number | null } = { min: null, max: null };
   filtersOpen = false;
 
@@ -47,7 +48,11 @@ export class TripGridComponent implements OnInit {
       const matchesPrice = (!this.priceRange.min || trip.finalPrice >= this.priceRange.min) &&
                           (!this.priceRange.max || trip.finalPrice <= this.priceRange.max);
       
-      return matchesDestinations && matchesActivities && matchesPrice;
+      // Filtro alojamiento
+      const matchesAccommodations = this.selectedAccommodations.size === 0 || 
+        this.selectedAccommodations.has(trip.accommodation);
+
+      return matchesDestinations && matchesActivities && matchesPrice && matchesAccommodations;
     });
   }
 
@@ -85,5 +90,9 @@ export class TripGridComponent implements OnInit {
 
   trackBySectionId(index: number, section: TripSection): string {
     return section.region;
+  }
+
+  get uniqueAccommodations(): string[] {
+    return Array.from(new Set(this.trips.map(trip => trip.accommodation))).sort();
   }
 }
