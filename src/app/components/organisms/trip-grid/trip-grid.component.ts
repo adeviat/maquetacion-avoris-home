@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { TripCardComponent, Trip } from '../../molecules/trip-card/trip-card.component';
 import { FiltersComponent } from '../../organisms/filters/filters.component';
+import { TripDataService } from '../../../services/trip-data.service';
 
 type TripSection = {
   region: string;
@@ -15,176 +16,20 @@ type TripSection = {
   templateUrl: './trip-grid.component.html',
   styleUrls: ['./trip-grid.component.scss'],
 })
-export class TripGridComponent {
+export class TripGridComponent implements OnInit {
   selectedActivities = new Set<string>();
   selectedDestinations = new Set<string>();
   priceRange: { min: number | null; max: number | null } = { min: null, max: null };
   filtersOpen = false;
 
-  trips: Trip[] = [
-    {
-      id: 1,
-      region: 'Asia',
-      country: 'Tailandia, Asia',
-      days: 9,
-      title: 'Descubre Bangkok con Iberojet',
-      priceFrom: 248,
-      price: 248,
-      tag: 'Quads',
-      image: 'https://picsum.photos/600/400?random=11',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 300,
-      activities: ['quads']
-      },
-    {
-      id: 2,
-      region: 'Africa',
-      country: 'Marruecos, África',
-      days: 5,
-      title: 'Aventura en el desierto',
-      priceFrom: 270,
-      price: 270,
-      tag: 'Parapente',
-      image: 'https://picsum.photos/600/400?random=12',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 320,
-      activities: ['parapente']
-    },
-    {
-      id: 3,
-      region: 'Africa',
-      country: 'Marruecos, África',
-      days: 6,
-      title: 'Ruta costera inolvidable',
-      priceFrom: 300,
-      price: 300,
-      tag: 'Explora',
-      image: 'https://picsum.photos/600/400?random=13',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 1200,
-      activities: ['explora'],
-    },
-    {
-      id: 4,
-      region: 'Europa',
-      country: 'España, Europa',
-      days: 7,
-      title: 'Ciudades milenarias',
-      priceFrom: 150,
-      price: 150,
-      tag: 'Quads',
-      image: 'https://picsum.photos/600/400?random=14',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 195,
-      activities: ['quads'],
-    },
-    {
-      id: 5,
-      region: 'Asia',
-      country: 'Tailandia, Asia',
-      days: 9,
-      title: 'Sabores de Bangkok',
-      priceFrom: 549,
-      price: 549,
-      tag: 'Parapente',
-      image: 'https://picsum.photos/600/400?random=15',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 700,
-      activities: ['parapente'],
-    },
-    {
-      id: 6,
-      region: 'América',
-      country: 'Perú, América',
-      days: 8,
-      title: 'Templos y naturaleza',
-      priceFrom: 148,
-      price: 148,
-      tag: 'Explora',
-      image: 'https://picsum.photos/600/400?random=16',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 150,
-      activities: ['explora'],
-    },
-    {
-      id: 7,
-      region: 'América',
-      country: 'Colombia, América',
-      days: 5,
-      title: 'Playas escondidas',
-      priceFrom: 248,
-      price: 248,
-      tag: 'Quads',
-      image: 'https://picsum.photos/600/400?random=17',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 260,
-      activities: ['quads'],
-    },
-    {
-      id: 8,
-      region: 'Africa',
-      country: 'Marruecos, África',
-      days: 9,
-      title: 'Ruta panorámica',
-      priceFrom: 268,
-      price: 268,
-      tag: 'Parapente',
-      image: 'https://picsum.photos/600/400?random=18',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 280,
-      activities: ['parapente'],
-    },
-    {
-      id: 9,
-      region: 'Oceanía',
-      country: 'Australia, Oceanía',
-      days: 3,
-      title: 'Mar extremo',
-      priceFrom: 248,
-      price: 248,
-      tag: 'Surf',
-      image: 'https://picsum.photos/600/400?random=19',
-      breakdown: [
-        { label: 'Precio antes de impuestos', amount: 1124 },
-        { label: 'Impuesto', amount: 4.43 },
-        { label: 'Lorem ipsum', amount: 150.42 },
-      ],
-      finalPrice: 250,
-      activities: ['surf'],
-    },
-  ];
+  trips: Trip[] = [];
+
+  constructor(private tripDataService: TripDataService) {}
+
+  ngOnInit(): void {
+    // ← NUEVO MÉTODO: carga los datos del servicio
+    this.trips = this.tripDataService.getMockTrips();
+  }
 
   get filteredTrips(): Trip[] {
     return this.trips.filter(trip => {
@@ -234,7 +79,7 @@ export class TripGridComponent {
     this.filtersOpen = false;
   }
 
-   trackByTripId(index: number, trip: Trip): number {
+  trackByTripId(index: number, trip: Trip): number {
     return trip.id;
   }
 
