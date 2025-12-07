@@ -54,10 +54,11 @@
           <div *ngFor="let destination of uniqueDestinations" class="o-filters__option">
             <input
               type="checkbox"
+              id="dest-{{destination}}"
               [checked]="valueDestinations.has(destination)"
               (change)="onDestinationChange(destination, $event)"
             />
-            <span class="o-filters__option-label">{{ destination }}</span>
+            <label for="dest-{{destination}}" class="o-filters__option-label">{{ destination }}</label>
             <button type="button" class="o-filters__info" data-bs-toggle="tooltip" data-bs-placement="right" title="Lorem ipsum">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <rect x="2.5" y="2.5" width="11" height="11" rx="5.5" stroke="#342E34"/>
@@ -106,6 +107,7 @@
           <label class="o-filters__option">
             <input
               type="checkbox"
+              id="act-quads"
               [checked]="valueActivities.has('quads')"
               (change)="onActivityChange('quads', $event)"
             />

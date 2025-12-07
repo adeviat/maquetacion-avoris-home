@@ -35,7 +35,7 @@ export class FiltersComponent implements AfterViewInit, OnChanges {
 
   @Input() uniqueDestinations: string[] = [];  // ← Las regiones desde TripGrid
   get totalDestinations(): number {            // ← Para "Ver X más"
-    return this.uniqueDestinations.length;
+     return this.valueActivities.size + this.valueDestinations.size;
   }
 
   onDestinationChange(destination: string, event: Event) {  // ← Método checkbox
