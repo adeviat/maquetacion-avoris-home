@@ -49,10 +49,23 @@
       <div
         id="filtersDestinos"
         class="accordion-collapse collapse"
-        data-bs-parent="#filtersAccordion"
       >
         <div class="accordion-body o-filters__section-body">
-          <p class="o-filters__placeholder">Próximamente filtros de destinos</p>
+          <div *ngFor="let destination of uniqueDestinations" class="o-filters__option">
+            <input
+              type="checkbox"
+              [checked]="valueDestinations.has(destination)"
+              (change)="onDestinationChange(destination, $event)"
+            />
+            <span class="o-filters__option-label">{{ destination }}</span>
+            <button type="button" class="o-filters__info" data-bs-toggle="tooltip" data-bs-placement="right" title="Lorem ipsum">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="5.5" stroke="#342E34"/>
+                <rect x="7.25" y="4.66699" width="1.5" height="1.5" rx="0.75" fill="#342E34"/>
+                <rect x="7.5" y="7.5" width="1" height="3.83333" rx="0.5" fill="#342E34"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -88,7 +101,6 @@
       <div
         id="filtersAventura"
         class="accordion-collapse collapse show"
-        data-bs-parent="#filtersAccordion"
       >
         <div class="accordion-body o-filters__section-body">
           <label class="o-filters__option">
@@ -261,7 +273,6 @@
       <div
         id="filtersAlojamiento"
         class="accordion-collapse collapse"
-        data-bs-parent="#filtersAccordion"
       >
         <div class="accordion-body o-filters__section-body">
           <p class="o-filters__placeholder">
@@ -300,7 +311,6 @@
       <div
         id="filtersPrecio"
         class="accordion-collapse collapse show"
-        data-bs-parent="#filtersAccordion"
       >
         <div
           class="accordion-body o-filters__section-body o-filters__section-body--price"
@@ -324,6 +334,8 @@
               class="o-filters__price-input"
               placeholder="Mínimo"
               min="0"
+              [(ngModel)]="tempMinPrice"
+              (input)="onMinPriceChange(tempMinPrice)"
             />
           </div>
 
@@ -346,6 +358,8 @@
               class="o-filters__price-input"
               placeholder="Máximo"
               min="0"
+              [(ngModel)]="tempMaxPrice"
+              (input)="onMaxPriceChange(tempMaxPrice)"
             />
           </div>
         </div>

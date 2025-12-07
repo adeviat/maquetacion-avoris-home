@@ -13,6 +13,7 @@ export interface Trip {
   days: number;
   title: string;
   priceFrom: number;
+  price: number;
   tag: string;
   image: string;
   breakdown: TripBreakdownItem[];
