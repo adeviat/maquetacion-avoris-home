@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Trip } from '../components/molecules/trip-card/trip-card.component'; // Ruta exacta según tu import
+import { Trip } from '../components/molecules/trip-card/trip-card.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,8 @@ export class TripDataService {
           { label: 'Lorem ipsum', amount: 150.42 },
         ],
         finalPrice: 300,
-        activities: ['quads']
+        activities: ['quads'],
+        accommodation: 'hotel'
       },
       {
         id: 2,
@@ -42,7 +43,8 @@ export class TripDataService {
           { label: 'Lorem ipsum', amount: 150.42 },
         ],
         finalPrice: 320,
-        activities: ['parapente']
+        activities: ['parapente'],
+        accommodation: 'camping'
       },
       {
         id: 3,
@@ -61,6 +63,7 @@ export class TripDataService {
         ],
         finalPrice: 1200,
         activities: ['explora'],
+        accommodation: 'hotel'
       },
       {
         id: 4,
@@ -79,6 +82,7 @@ export class TripDataService {
         ],
         finalPrice: 195,
         activities: ['quads'],
+        accommodation: 'apartamento'
       },
       {
         id: 5,
@@ -97,6 +101,7 @@ export class TripDataService {
         ],
         finalPrice: 700,
         activities: ['parapente'],
+        accommodation: 'hotel'
       },
       {
         id: 6,
@@ -115,6 +120,7 @@ export class TripDataService {
         ],
         finalPrice: 150,
         activities: ['explora'],
+        accommodation: 'cabaña'
       },
       {
         id: 7,
@@ -133,6 +139,7 @@ export class TripDataService {
         ],
         finalPrice: 260,
         activities: ['quads'],
+        accommodation: 'hotel'
       },
       {
         id: 8,
@@ -151,6 +158,7 @@ export class TripDataService {
         ],
         finalPrice: 280,
         activities: ['parapente'],
+        accommodation: 'camping'
       },
       {
         id: 9,
@@ -169,7 +177,407 @@ export class TripDataService {
         ],
         finalPrice: 250,
         activities: ['surf'],
+        accommodation: 'studio'
       },
+      {
+        id: 10,
+        region: 'Europa',
+        country: 'Italia, Europa',
+        days: 10,
+        title: 'Roma y la Toscana',
+        priceFrom: 420,
+        price: 420,
+        tag: 'Cultura',
+        image: 'https://picsum.photos/600/400?random=20',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1850 },
+          { label: 'Impuesto', amount: 12.50 },
+          { label: 'Tasas', amount: 45.20 },
+        ],
+        finalPrice: 550,
+        activities: ['cultura'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 11,
+        region: 'Asia',
+        country: 'Japón, Asia',
+        days: 12,
+        title: 'Sakura y templos',
+        priceFrom: 890,
+        price: 890,
+        tag: 'Explora',
+        image: 'https://picsum.photos/600/400?random=21',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 3200 },
+          { label: 'Impuesto', amount: 18.75 },
+          { label: 'Seguro', amount: 89.30 },
+        ],
+        finalPrice: 1050,
+        activities: ['explora'],
+        accommodation: 'studio'
+      },
+      {
+        id: 12,
+        region: 'América',
+        country: 'Argentina, América',
+        days: 7,
+        title: 'Patagonia aventura',
+        priceFrom: 380,
+        price: 380,
+        tag: 'Quads',
+        image: 'https://picsum.photos/600/400?random=22',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1450 },
+          { label: 'Impuesto', amount: 8.90 },
+          { label: 'Guía', amount: 65.40 },
+        ],
+        finalPrice: 480,
+        activities: ['quads'],
+        accommodation: 'cabaña'
+      },
+      {
+        id: 13,
+        region: 'Europa',
+        country: 'Grecia, Europa',
+        days: 8,
+        title: 'Islas del Egeo',
+        priceFrom: 290,
+        price: 290,
+        tag: 'Surf',
+        image: 'https://picsum.photos/600/400?random=23',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1280 },
+          { label: 'Impuesto', amount: 6.20 },
+          { label: 'Traslados', amount: 32.10 },
+        ],
+        finalPrice: 380,
+        activities: ['surf'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 14,
+        region: 'Africa',
+        country: 'Kenia, África',
+        days: 11,
+        title: 'Safari inolvidable',
+        priceFrom: 650,
+        price: 650,
+        tag: 'Explora',
+        image: 'https://picsum.photos/600/400?random=24',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 2450 },
+          { label: 'Impuesto', amount: 15.80 },
+          { label: 'Parque', amount: 98.50 },
+        ],
+        finalPrice: 820,
+        activities: ['explora'],
+        accommodation: 'cabaña'
+      },
+      {
+        id: 15,
+        region: 'Oceanía',
+        country: 'Nueva Zelanda, Oceanía',
+        days: 14,
+        title: 'Señor de los Anillos',
+        priceFrom: 1250,
+        price: 1250,
+        tag: 'Parapente',
+        image: 'https://picsum.photos/600/400?random=25',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 4800 },
+          { label: 'Impuesto', amount: 24.30 },
+          { label: 'Actividades', amount: 156.70 },
+        ],
+        finalPrice: 1520,
+        activities: ['parapente'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 16,
+        region: 'Asia',
+        country: 'India, Asia',
+        days: 10,
+        title: 'Rajastán místico',
+        priceFrom: 340,
+        price: 340,
+        tag: 'Cultura',
+        image: 'https://picsum.photos/600/400?random=26',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1420 },
+          { label: 'Impuesto', amount: 9.60 },
+          { label: 'Guía', amount: 78.20 },
+        ],
+        finalPrice: 450,
+        activities: ['cultura'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 17,
+        region: 'Europa',
+        country: 'Portugal, Europa',
+        days: 6,
+        title: 'Porto y Douro',
+        priceFrom: 210,
+        price: 210,
+        tag: 'Quads',
+        image: 'https://picsum.photos/600/400?random=27',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 980 },
+          { label: 'Impuesto', amount: 5.40 },
+          { label: 'Vinos', amount: 42.30 },
+        ],
+        finalPrice: 290,
+        activities: ['quads'],
+        accommodation: 'apartamento'
+      },
+      {
+        id: 18,
+        region: 'América',
+        country: 'México, América',
+        days: 9,
+        title: 'Yucatán maya',
+        priceFrom: 320,
+        price: 320,
+        tag: 'Explora',
+        image: 'https://picsum.photos/600/400?random=28',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1350 },
+          { label: 'Impuesto', amount: 7.80 },
+          { label: 'Cenotes', amount: 56.40 },
+        ],
+        finalPrice: 420,
+        activities: ['explora'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 19,
+        region: 'Africa',
+        country: 'Sudáfrica, África',
+        days: 12,
+        title: 'Ruta de los vinos',
+        priceFrom: 480,
+        price: 480,
+        tag: 'Cultura',
+        image: 'https://picsum.photos/600/400?random=29',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1980 },
+          { label: 'Impuesto', amount: 11.20 },
+          { label: 'Catación', amount: 89.70 },
+        ],
+        finalPrice: 620,
+        activities: ['cultura'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 20,
+        region: 'Asia',
+        country: 'Vietnam, Asia',
+        days: 11,
+        title: 'Ha Long y arrozales',
+        priceFrom: 390,
+        price: 390,
+        tag: 'Surf',
+        image: 'https://picsum.photos/600/400?random=30',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1580 },
+          { label: 'Impuesto', amount: 10.50 },
+          { label: 'Crucero', amount: 73.20 },
+        ],
+        finalPrice: 510,
+        activities: ['surf'],
+        accommodation: 'cabaña'
+      },
+      {
+        id: 21,
+        region: 'Europa',
+        country: 'Croacia, Europa',
+        days: 8,
+        title: 'Dubrovnik medieval',
+        priceFrom: 360,
+        price: 360,
+        tag: 'Parapente',
+        image: 'https://picsum.photos/600/400?random=31',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1520 },
+          { label: 'Impuesto', amount: 8.70 },
+          { label: 'Murallas', amount: 61.80 },
+        ],
+        finalPrice: 470,
+        activities: ['parapente'],
+        accommodation: 'apartamento'
+      },
+      {
+        id: 22,
+        region: 'Oceanía',
+        country: 'Fiji, Oceanía',
+        days: 7,
+        title: 'Paraíso tropical',
+        priceFrom: 580,
+        price: 580,
+        tag: 'Surf',
+        image: 'https://picsum.photos/600/400?random=32',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 2280 },
+          { label: 'Impuesto', amount: 14.60 },
+          { label: 'Bungalow', amount: 102.30 },
+        ],
+        finalPrice: 720,
+        activities: ['surf'],
+        accommodation: 'cabaña'
+      },
+      {
+        id: 23,
+        region: 'América',
+        country: 'Chile, América',
+        days: 10,
+        title: 'Atacama estelar',
+        priceFrom: 450,
+        price: 450,
+        tag: 'Explora',
+        image: 'https://picsum.photos/600/400?random=33',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1820 },
+          { label: 'Impuesto', amount: 12.40 },
+          { label: 'Observatorio', amount: 94.50 },
+        ],
+        finalPrice: 580,
+        activities: ['explora'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 24,
+        region: 'Europa',
+        country: 'Islandia, Europa',
+        days: 6,
+        title: 'Auroras boreales',
+        priceFrom: 670,
+        price: 670,
+        tag: 'Quads',
+        image: 'https://picsum.photos/600/400?random=34',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 2650 },
+          { label: 'Impuesto', amount: 17.20 },
+          { label: 'Glaciar', amount: 123.40 },
+        ],
+        finalPrice: 850,
+        activities: ['quads'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 25,
+        region: 'Asia',
+        country: 'Indonesia, Asia',
+        days: 9,
+        title: 'Bali espiritual',
+        priceFrom: 280,
+        price: 280,
+        tag: 'Surf',
+        image: 'https://picsum.photos/600/400?random=35',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1180 },
+          { label: 'Impuesto', amount: 7.90 },
+          { label: 'Yoga', amount: 54.70 },
+        ],
+        finalPrice: 370,
+        activities: ['surf'],
+        accommodation: 'studio'
+      },
+      {
+        id: 26,
+        region: 'Africa',
+        country: 'Egipto, África',
+        days: 8,
+        title: 'Pirámides y Nilo',
+        priceFrom: 410,
+        price: 410,
+        tag: 'Cultura',
+        image: 'https://picsum.photos/600/400?random=36',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1720 },
+          { label: 'Impuesto', amount: 9.80 },
+          { label: 'Crucero Nilo', amount: 82.60 },
+        ],
+        finalPrice: 530,
+        activities: ['cultura'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 27,
+        region: 'América',
+        country: 'Brasil, América',
+        days: 11,
+        title: 'Amazonas salvaje',
+        priceFrom: 520,
+        price: 520,
+        tag: 'Explora',
+        image: 'https://picsum.photos/600/400?random=37',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 2180 },
+          { label: 'Impuesto', amount: 13.50 },
+          { label: 'Lodges', amount: 107.20 },
+        ],
+        finalPrice: 680,
+        activities: ['explora'],
+        accommodation: 'cabaña'
+      },
+      {
+        id: 28,
+        region: 'Europa',
+        country: 'Suiza, Europa',
+        days: 7,
+        title: 'Alpes suizos',
+        priceFrom: 590,
+        price: 590,
+        tag: 'Parapente',
+        image: 'https://picsum.photos/600/400?random=38',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 2380 },
+          { label: 'Impuesto', amount: 15.90 },
+          { label: 'Teleférico', amount: 112.40 },
+        ],
+        finalPrice: 760,
+        activities: ['parapente'],
+        accommodation: 'hotel'
+      },
+      {
+        id: 29,
+        region: 'Oceanía',
+        country: 'Tasmania, Oceanía',
+        days: 9,
+        title: 'Naturaleza pura',
+        priceFrom: 460,
+        price: 460,
+        tag: 'Quads',
+        image: 'https://picsum.photos/600/400?random=39',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 1920 },
+          { label: 'Impuesto', amount: 11.70 },
+          { label: 'Senderos', amount: 88.30 },
+        ],
+        finalPrice: 590,
+        activities: ['quads'],
+        accommodation: 'camping'
+      },
+      {
+        id: 30,
+        region: 'Asia',
+        country: 'Maldivas, Asia',
+        days: 5,
+        title: 'Overwater bungalows',
+        priceFrom: 980,
+        price: 980,
+        tag: 'Surf',
+        image: 'https://picsum.photos/600/400?random=40',
+        breakdown: [
+          { label: 'Precio antes de impuestos', amount: 3850 },
+          { label: 'Impuesto', amount: 22.40 },
+          { label: 'Todo incluido', amount: 198.70 },
+        ],
+        finalPrice: 1280,
+        activities: ['surf'],
+        accommodation: 'studio'
+      }
     ];
   }
 }

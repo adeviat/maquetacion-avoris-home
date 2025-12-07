@@ -19,6 +19,7 @@ export interface Trip {
   breakdown: TripBreakdownItem[];
   finalPrice: number;
   activities: string[];
+  accommodation: 'hotel' | 'cabaña' | 'apartamento' | 'studio' | 'camping';
 }
 
 @Component({
