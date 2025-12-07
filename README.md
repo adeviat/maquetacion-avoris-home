@@ -34,13 +34,14 @@ Proyecto front-end que replica la landing de "Waveless": grid responsive de viaj
 ## 🚀 Instalación (2 min)
 
 1. Clonar
-git clone <URL_DEL_REPO>
-cd waveless
+git clone https://github.com/adeviat/maquetacion-avoris-home.git
 
-2. Instalar
+cd maquetacion-avoris-home
+
+3. Instalar
 npm ci
 
-3. Ejecutar
+4. Ejecutar
 npm start
 
 **✅ http://localhost:4200** (automáticamente abre)
