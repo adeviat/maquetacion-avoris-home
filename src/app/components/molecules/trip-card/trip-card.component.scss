@@ -88,7 +88,7 @@
     white-space: nowrap;
   }
 
-   &__bottom {
+  &__bottom {
     padding: m.$space-md m.$space-lg m.$space-lg;
     background-color: c.$footer-bg-default;
     border-top: 1px solid c.$footer-bg-bottom-bar-deafult;
@@ -109,7 +109,7 @@
     border: none;
     background: none;
     color: c.$btn-primary-bg-default;
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -286,5 +286,41 @@
     &__panel {
       max-width: 560px;
     }
+  }
+
+  .m-trip-card {
+    &__bottom {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: m.$space-lg;
+    }
+
+    &__pricing-row {
+      display: grid;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    &__price-wrapper {
+      order: 1;
+      text-align: left;
+    }
+
+    &__breakdown {
+      order: 2;
+    }
+
+    &__cta {
+      width: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  .a-button--secondary {
+    width: auto;
   }
 }
