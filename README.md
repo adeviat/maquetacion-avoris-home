@@ -1,10 +1,11 @@
-# Waveless – Landing de viajes en Angular [translate:Vive tus propias aventuras]
+# Waveless – Landing de viajes en Angular WAVELESS
 
 Proyecto front-end que replica la landing de "Waveless": grid responsive de viajes con filtros avanzados (actividades, destinos, alojamiento, precio) y popup de desglose de precios.
 
 [![Angular](https://img.shields.io/badge/Angular-17%2B-green)](https://angular.io)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org)
 [![SCSS](https://img.shields.io/badge/SCSS-BEM%20%2B%20Design%20Tokens-orange)](https://sass-lang.com)
+[![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5-blueviolet?logo=bootstrap&logoColor=white)](https://getbootstrap.com/docs/5.3/)
 
 ---
 
