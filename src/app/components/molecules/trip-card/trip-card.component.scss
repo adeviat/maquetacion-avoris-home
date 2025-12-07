@@ -204,11 +204,12 @@
   }
 
   &__header {
-    padding: m.$space-md m.$space-xl;
-    border-bottom: 1px solid c.$overlay-border-default;
+    padding: m.$space-md;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: c.$footer-bg-default;
+    border-bottom: 1px solid c.$footer-bg-bottom-bar-deafult;
   }
 
   &__title {
@@ -233,10 +234,13 @@
   &__trip {
     margin: 0 0 m.$space-md;
     font-weight: 700;
+    font-family: g.$secondary-font;
+    color: c.$btn-primary-bg-default;
 
     span {
       font-weight: 400;
       margin-left: m.$space-xs;
+      color: c.$card-title-default;
     }
   }
 
@@ -263,10 +267,13 @@
 
   &__footer {
     padding: m.$space-md m.$space-xl;
-    border-top: 1px solid c.$card-title-default;
     display: flex;
     justify-content: space-between;
     font-weight: 700;
+    background-color: c.$footer-bg-default;
+    border-top: 1px solid c.$footer-bg-bottom-bar-deafult;
+    font-size: g.$font-text-ref;
+    line-height: g.$font-line-height-ref;
   }
 
   &__footer-label {
@@ -277,7 +284,6 @@
 .m-price-popup__panel {
   background: #fff;
   border-radius: 1rem;
-  padding: 1.5rem;
   min-width: 280px;
 }
 
