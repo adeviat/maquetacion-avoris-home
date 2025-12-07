@@ -12,7 +12,7 @@ interface HeroSlide {
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgFor], // añade aquí NgFor
+  imports: [NgFor],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
 })

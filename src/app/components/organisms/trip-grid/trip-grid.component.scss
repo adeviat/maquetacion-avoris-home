@@ -73,7 +73,7 @@
   }
 
   @include m.respond-up(desktop) {
-    padding: m.$space-2xl; // antes m.$space-2xl*3 que empujaba el grid
+    padding: g.$space-3xl;
 
     &__header {
       margin-bottom: m.$space-md;
